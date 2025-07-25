@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #061111;
   margin: 0;
 }
 
@@ -28,22 +28,25 @@ main {
   align-items: stretch;
 }
 main .sobreMi, main .cv, main .proyectos, main .contacto, main .tecnologias {
-  border: 1px solid black;
+  border: 1px solid #b0c4c4;
   padding: 2rem;
   border-radius: 10px;
   transition: 0.2s;
 }
 main .sobreMi:hover, main .cv:hover, main .proyectos:hover, main .contacto:hover, main .tecnologias:hover {
-  box-shadow: 0px 0px 10px #fff;
+  box-shadow: 0px 0px 10px #ffffff;
 }
 main h1, main h2, main h3 {
   font-family: "Bebas Neue", sans-serif;
+}
+main p {
+  color: #ffffff;
 }
 
 /*  Estilos de la seccion SobreMi */
 .sobreMi {
   grid-area: sobreMi;
-  background-color: #e6e0f8;
+  background-color: #26827e;
   display: flex;
   align-items: center;
   padding: 2rem;
@@ -67,7 +70,7 @@ main h1, main h2, main h3 {
 /*  Estilos de la seccion cv */
 .cv {
   grid-area: cv;
-  background-color: #2ecc71;
+  background-color: #58d4ce;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,7 +109,7 @@ main h1, main h2, main h3 {
 /* Estilos de la seccion contacto */
 .contacto {
   grid-area: contacto;
-  background-color: #e74c3c;
+  background-color: #3ab3ad;
   text-align: center;
 }
 .contacto .arroba {
@@ -115,7 +118,7 @@ main h1, main h2, main h3 {
 }
 .contacto h3 {
   font-size: 45px;
-  color: #fff;
+  color: #ffffff;
 }
 .contacto a img {
   margin-top: 20px;
@@ -126,7 +129,7 @@ main h1, main h2, main h3 {
 /*  Estilos de la seccion proyectos */
 .proyectos {
   grid-area: proyectos;
-  background-color: #2d469b;
+  background-color: #9fdfdc;
   text-align: center;
 }
 .proyectos h2 {
@@ -150,7 +153,7 @@ main h1, main h2, main h3 {
 .tecnologias {
   grid-area: tecnologias;
   text-align: center;
-  background-color: #fff;
+  background-color: #ffffff;
   overflow: hidden;
   position: relative;
   padding: 2rem;
