@@ -1,0 +1,39 @@
+/* Reset */
+@use "./variables" as *;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+body{
+    background-color: #222;
+    margin: 0;
+}
+main{
+    font-family: $font-texto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns:  50% 24% 24%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "sobreMi cv contacto"
+    "proyectos tecnologias contacto";
+    align-items: stretch;
+    gap: 10px;
+    padding: 20px;
+    align-items: stretch;
+    .sobreMi,.cv,.proyectos,.contacto,.tecnologias{
+        border: 1px solid black;
+        padding: 2rem;
+        border-radius: 10px;
+        transition: 0.2s;
+    }
+    .sobreMi:hover,.cv:hover,.proyectos:hover,.contacto:hover,.tecnologias:hover{
+        box-shadow: 0px 0px 10px $color-blanco ;
+    }
+    h1, h2,h3{
+        font-family: $font-titulos;
+    }
+}

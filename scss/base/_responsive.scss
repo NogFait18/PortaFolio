@@ -1,0 +1,61 @@
+/* Seccion Responsive */
+@media (max-width: 1100px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto; /* 4 filas */
+        grid-template-areas:
+        "sobreMi sobreMi"
+        "cv proyectos"
+        "tecnologias tecnologias"
+        "contacto contacto";
+        .proyectos{
+            margin-bottom: 0px;
+            div{
+                gap: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            img{
+                width: 60px;
+            }
+        }
+    }
+}
+@media(max-width:590px){
+    main {
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto auto auto auto auto auto; 
+        grid-template-areas:
+        "sobreMi"
+        "cv" 
+        "proyectos"
+        "tecnologias" 
+        "contacto";
+        .sobreMi{
+            flex-direction: column;
+            gap: 30px;
+        }
+        .proyectos {
+            padding: 1.5rem; // 🔧 menos padding
+            h2 {
+                font-size: 36px; // 🔧 más pequeño aún
+            }
+
+            div {
+                gap: 20px; // 🔧 menos espacio entre íconos
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            img {
+                width: 50px;
+            }
+        }
+    }
+}
+@media(max-width:375px){
+    main{
+        padding: 0px;
+    }
+}

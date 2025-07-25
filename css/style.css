@@ -1,3 +1,7 @@
+/* Variables */
+/*  Variables de colores */
+/*  Variables de fuentes */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,7 +39,9 @@ main .sobreMi:hover, main .cv:hover, main .proyectos:hover, main .contacto:hover
 main h1, main h2, main h3 {
   font-family: "Bebas Neue", sans-serif;
 }
-main .sobreMi {
+
+/*  Estilos de la seccion SobreMi */
+.sobreMi {
   grid-area: sobreMi;
   background-color: #e6e0f8;
   display: flex;
@@ -44,20 +50,22 @@ main .sobreMi {
   border-radius: 10px;
   text-align: center;
 }
-main .sobreMi .perfil {
+.sobreMi .perfil {
   margin-right: 20px;
 }
-main .sobreMi .perfil img {
+.sobreMi .perfil img {
   width: 15rem;
   height: 15rem;
   border-radius: 100%;
 }
-main .sobreMi .perfil .linkImg {
+.sobreMi .perfil .linkImg {
   margin-top: 10px;
   width: 35px;
   height: auto;
 }
-main .cv {
+
+/*  Estilos de la seccion cv */
+.cv {
   grid-area: cv;
   background-color: #2ecc71;
   display: flex;
@@ -67,11 +75,9 @@ main .cv {
   position: relative;
   z-index: 0;
 }
-main .cv::before {
+.cv::before {
   content: "";
   position: absolute;
-  top: 50;
-  left: 50;
   width: 80%;
   height: 80%;
   background-image: url(../images/documento.png);
@@ -82,10 +88,12 @@ main .cv::before {
   z-index: -1;
   pointer-events: none;
 }
-main .cv h2 {
+.cv h2 {
   font-size: 48px;
 }
-main .cv button {
+.cv button {
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin: 2rem;
   border: none;
@@ -94,34 +102,38 @@ main .cv button {
   border-radius: 8px;
   cursor: pointer;
 }
-main .contacto {
+
+/* Estilos de la seccion contacto */
+.contacto {
   grid-area: contacto;
   background-color: #e74c3c;
   text-align: center;
 }
-main .contacto .arroba {
+.contacto .arroba {
   font-size: 16rem;
   opacity: 0.2;
 }
-main .contacto h3 {
+.contacto h3 {
   font-size: 45px;
   color: #fff;
 }
-main .contacto a img {
+.contacto a img {
   margin-top: 20px;
   width: 45px;
   height: auto;
 }
-main .proyectos {
+
+/*  Estilos de la seccion proyectos */
+.proyectos {
   grid-area: proyectos;
   background-color: #2d469b;
   text-align: center;
 }
-main .proyectos h2 {
+.proyectos h2 {
   font-size: 32px;
   margin-bottom: 40px;
 }
-main .proyectos div {
+.proyectos div {
   border: none;
   display: flex;
   align-items: center;
@@ -129,30 +141,32 @@ main .proyectos div {
   gap: 60px;
   margin-top: 12px;
 }
-main .proyectos img {
+.proyectos img {
   width: 60px;
   height: auto;
 }
-main .tecnologias {
+
+/*  Estilos de la seccion tecnologias */
+.tecnologias {
+  grid-area: tecnologias;
   text-align: center;
   background-color: #fff;
-  grid-area: tecnologias;
   overflow: hidden;
   position: relative;
   padding: 2rem;
 }
-main .tecnologias h2 {
+.tecnologias h2 {
   font-size: 32px;
   margin-bottom: 50px;
 }
-main .tecnologias .carrusel-track {
+.tecnologias .carrusel-track {
   display: flex;
   width: max-content;
   animation: scroll 20s linear infinite;
   gap: 40px;
   border: none;
 }
-main .tecnologias .carrusel-track img {
+.tecnologias .carrusel-track img {
   width: 60px;
   height: auto;
   object-fit: contain;
@@ -166,6 +180,7 @@ main .tecnologias .carrusel-track img {
   }
 }
 
+/* Seccion Responsive */
 @media (max-width: 1100px) {
   main {
     grid-template-columns: 1fr 1fr;

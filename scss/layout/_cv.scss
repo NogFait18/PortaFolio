@@ -1,0 +1,43 @@
+/*  Estilos de la seccion cv */
+
+@use "../base/variables" as *;
+
+.cv {
+    grid-area: cv;
+    background-color: $color-acento;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; // necesario para el ::before
+    z-index: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background-image: url(../images/documento.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.2; // o el valor que prefieras
+        z-index: -1;
+        pointer-events: none; // evita interferencia con clicks
+    }
+    h2{
+        font-size: 48px;
+        
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem;
+        border: none;
+        height: 2rem;
+        width:8rem;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,39 @@
+/*  Estilos de la seccion tecnologias */
+
+@use "../base/variables" as *;
+
+.tecnologias {
+    grid-area: tecnologias;
+    text-align: center;
+    background-color: $color-blanco;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem;
+    h2{
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+
+    .carrusel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+    gap: 40px;
+    border: none;
+    }
+
+    .carrusel-track img {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }   
+    }
+}

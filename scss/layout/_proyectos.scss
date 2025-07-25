@@ -1,0 +1,25 @@
+/*  Estilos de la seccion proyectos */
+
+@use "../base/variables" as *;
+
+.proyectos{
+    grid-area: proyectos;
+    background-color: $color-primario;
+    text-align: center;
+    h2{
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    div{
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        margin-top: 12px;
+    }
+    img{
+        width: 60px;
+        height: auto;
+    }
+}

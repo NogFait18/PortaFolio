@@ -1,0 +1,26 @@
+/*  Estilos de la seccion SobreMi */
+
+@use "../base/variables" as *;
+
+.sobreMi{
+    grid-area: sobreMi;
+    background-color: $color-secundario;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    .perfil{
+        margin-right: 20px;
+        img{
+            width: 15rem;
+            height: 15rem;
+            border-radius: 100%;
+        }
+        .linkImg{
+            margin-top: 10px;
+            width: 35px;
+            height: auto;
+        }
+    }
+}
