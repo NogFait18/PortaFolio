@@ -12,28 +12,26 @@
 
 body {
   background-color: #061111;
-  margin: 0;
 }
 
 main {
   font-family: "Rubik", sans-serif;
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 50% 24% 24%;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas: "sobreMi cv contacto" "proyectos tecnologias contacto";
-  align-items: stretch;
   gap: 10px;
   padding: 20px;
   align-items: stretch;
 }
-main .sobreMi, main .cv, main .proyectos, main .contacto, main .tecnologias {
+main .bloque {
   border: 1px solid #b0c4c4;
   padding: 2rem;
   border-radius: 10px;
   transition: 0.2s;
 }
-main .sobreMi:hover, main .cv:hover, main .proyectos:hover, main .contacto:hover, main .tecnologias:hover {
+main .bloque:hover {
   box-shadow: 0px 0px 10px #ffffff;
 }
 main h1, main h2, main h3 {
@@ -49,8 +47,6 @@ main p {
   background-color: #26827e;
   display: flex;
   align-items: center;
-  padding: 2rem;
-  border-radius: 10px;
   text-align: center;
 }
 .sobreMi .perfil {
@@ -145,7 +141,6 @@ main p {
   margin-bottom: 40px;
 }
 .proyectos div {
-  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,7 +159,6 @@ main p {
   background-color: #ffffff;
   overflow: hidden;
   position: relative;
-  padding: 2rem;
 }
 .tecnologias h2 {
   font-size: 32px;
@@ -175,7 +169,6 @@ main p {
   width: max-content;
   animation: scroll 20s linear infinite;
   gap: 40px;
-  border: none;
 }
 .tecnologias .carrusel-track img {
   width: 60px;
@@ -198,15 +191,15 @@ main p {
     grid-template-rows: auto auto auto auto; /* 4 filas */
     grid-template-areas: "sobreMi sobreMi" "cv proyectos" "tecnologias tecnologias" "contacto contacto";
   }
-  main .proyectos {
+  .proyectos {
     margin-bottom: 0px;
   }
-  main .proyectos div {
+  .proyectos div {
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
   }
-  main .proyectos img {
+  .proyectos img {
     width: 60px;
   }
 }
@@ -217,28 +210,58 @@ main p {
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas: "sobreMi" "cv" "proyectos" "tecnologias" "contacto";
   }
-  main .sobreMi {
+  .sobreMi {
     flex-direction: column;
     gap: 30px;
   }
-  main .proyectos {
+  .proyectos {
     padding: 1.5rem;
   }
-  main .proyectos h2 {
+  .proyectos h2 {
     font-size: 36px;
   }
-  main .proyectos div {
+  .proyectos div {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
   }
-  main .proyectos img {
+  .proyectos img {
     width: 50px;
   }
 }
 @media (max-width: 375px) {
   main {
     padding: 0px;
+  }
+  .cv h2,
+  .contacto h3,
+  .proyectos h2,
+  .tecnologias h2 {
+    font-size: 28px;
+  }
+  .cv a {
+    width: 100%;
+    max-width: 160px;
+    height: 2.5rem;
+  }
+  .proyectos div {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .proyectos img,
+  .tecnologias .carrusel-track img,
+  .contacto a img {
+    width: 50px;
+  }
+  .sobreMi .perfil img {
+    width: 15rem;
+    height: 15rem;
+  }
+  .contacto .arroba {
+    font-size: 10rem;
+  }
+  .bloque {
+    padding: 1rem;
   }
 }
 

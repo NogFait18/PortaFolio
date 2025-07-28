@@ -8,16 +8,16 @@
         "cv proyectos"
         "tecnologias tecnologias"
         "contacto contacto";
-        .proyectos{
-            margin-bottom: 0px;
-            div{
-                gap: 30px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            img{
-                width: 60px;
-            }
+    }
+    .proyectos{
+        margin-bottom: 0px;
+        div{
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img{
+            width: 60px;
         }
     }
 }
@@ -32,30 +32,76 @@
         "proyectos"
         "tecnologias" 
         "contacto";
-        .sobreMi{
-            flex-direction: column;
-            gap: 30px;
+    }
+    .sobreMi{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .proyectos {
+        padding: 1.5rem; // 🔧 menos padding
+        h2 {
+            font-size: 36px; // 🔧 más pequeño aún
         }
-        .proyectos {
-            padding: 1.5rem; // 🔧 menos padding
-            h2 {
-                font-size: 36px; // 🔧 más pequeño aún
-            }
 
-            div {
-                gap: 20px; // 🔧 menos espacio entre íconos
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+        div {
+            gap: 20px; // 🔧 menos espacio entre íconos
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-            img {
-                width: 50px;
-            }
+        img {
+            width: 50px;
         }
     }
 }
 @media(max-width:375px){
     main{
         padding: 0px;
+    }
+    .cv h2,
+    .contacto h3,
+    .proyectos h2,
+    .tecnologias h2 {
+        font-size: 28px;
+    }
+
+    .cv {
+        a{
+            width: 100%;
+            max-width: 160px;
+            height: 2.5rem;
+        }
+    }
+
+    .proyectos {
+        div{
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .proyectos img,
+    .tecnologias .carrusel-track img,
+    .contacto a img {
+        width: 50px;
+    }
+
+    .sobreMi {
+        .perfil{
+            img {
+            width: 15rem;
+            height: 15rem;
+        }   
+    } 
+    }
+
+    .contacto {
+        .arroba{
+            font-size: 10rem;
+        }
+    }
+
+    .bloque {
+        padding: 1rem;
     }
 }
