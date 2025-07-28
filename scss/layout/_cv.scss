@@ -29,8 +29,9 @@
         font-size: 48px;
         
     }
-    button{
+    a{
         display: flex;
+        background-color: $color-blanco;
         justify-content: center;
         align-items: center;
         margin: 2rem;
@@ -39,5 +40,13 @@
         width:8rem;
         border-radius: 8px;
         cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        transition-duration: 0.2s; 
+    }
+    a:hover{
+        background-color: $color-secundario;
+        color: $color-blanco;
+        border: 2px solid $color-blanco;
     }
 }

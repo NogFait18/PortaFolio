@@ -59,7 +59,6 @@ main p {
 .sobreMi .perfil img {
   width: 15rem;
   height: 15rem;
-  border-radius: 100%;
 }
 .sobreMi .perfil .linkImg {
   margin-top: 10px;
@@ -94,8 +93,9 @@ main p {
 .cv h2 {
   font-size: 48px;
 }
-.cv button {
+.cv a {
   display: flex;
+  background-color: #ffffff;
   justify-content: center;
   align-items: center;
   margin: 2rem;
@@ -104,6 +104,14 @@ main p {
   width: 8rem;
   border-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition-duration: 0.2s;
+}
+.cv a:hover {
+  background-color: #26827e;
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 
 /* Estilos de la seccion contacto */
