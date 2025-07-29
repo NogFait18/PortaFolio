@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="./js/index.js" defer></script>
     <meta name="description" content="Soy Fausto Chirino, desarrollador frontend en formación con conocimientos en HTML, CSS, JavaScript y React. Descubrí mis proyectos, habilidades y cómo puedo aportar a tu equipo.">
     <meta name="keywords" content="Fausto Chirino, desarrollador frontend, portfolio desarrollador, HTML, CSS, JavaScript, React, proyectos web, programador junior, desarrollador web, frontend developer Argentina">
     <title>Fausto Chirino</title>
@@ -20,9 +21,9 @@
             <img src="./images/perfil.png" alt="">
             <h2>Fausto Chirino</h2>
             <h3>Desarrollador Frontend</h3>
-            <a href=""><img src="./images/github.png" alt="" class="linkImg"></a>
-            <a href=""><img src="./images/instagram.png" alt="" class="linkImg"></a>
-            <a href=""><img src="./images/linkedin.png" alt="" class="linkImg"></a>
+            <a href="https://github.com/NogFait18" target="_blank" title="github"><img src="./images/github.png" alt="github" class="linkImg"></a>
+            <a href="https://www.instagram.com/faustochirino" target="_blank" title="instagram"><img src="./images/instagram.png" alt="instagram" class="linkImg"></a>
+            <a href="https://www.linkedin.com/in/fausto-chirino-76b7572b6" target="_blank" title="linkedin"><img src="./images/linkedin.png" alt="linkedin" class="linkImg"></a>
         </section>
         <section class="presentacion">
             <p>
@@ -41,24 +42,28 @@
         <h3>Sobre</h3>
         <h3>Tu</h3>
         <h3>Proyecto</h3>
-        <a href=""><img src="./images/github.png" alt=""></a>
-        <a href=""><img src="./images/instagram.png" alt=""></a>
-        <a href=""><img src="./images/linkedin.png" alt=""></a>
+        <a href="" ><img src="./images/github.png" alt="github"></a>
+        <a href=""><img src="./images/instagram.png" alt="instagram"></a>
+        <a href=""><img src="./images/linkedin.png" alt="linkedin"></a>
     </div>
-    <div class="proyectos bloque animate__animated animate__bounceInUp">
+    <div id="proyectosContenedor" class="proyectos bloque animate__animated animate__bounceInUp">
         <h2>Proyectos</h2>
-        <div class="contenedor">
-        <div>
-        <a href=""><img src="./images/CRUD.ico" alt=""></a>
+        <div class="contenedor" >
+        <div class="proyecto" data-id="CRUD" onclick="mostrarProyecto(0)">
+            <img src="./images/CRUD.ico" alt="">
+            <h3>CRUD</h3>
         </div>
-        <div>
-        <a href=""><img src="./images/CRUD.ico" alt=""></a>
+        <div class="proyecto"  onclick="mostrarProyecto(1)">
+            <img src="./images/CRUD.ico" alt="">
+            <h3>Ejemplo</h3>
         </div>
-        <div>
-        <a href=""><img src="./images/CRUD.ico" alt=""></a>
+        <div class="proyecto" onclick="mostrarProyecto(2)">
+            <img src="./images/CRUD.ico" alt="">
+            <h3>Ejemplo</h3>
         </div>
-        <div>
-        <a href=""><img src="./images/CRUD.ico" alt=""></a>
+        <div class="proyecto" data-id="4">
+            <img src="./images/CRUD.ico" alt="">
+            <h3>Ejemplo</h3>
         </div>
         </div>
     </div>
@@ -81,5 +86,7 @@
     </div>
     </div>
     </main>
+    <!-- Asegúrate de incluir SweetAlert2 en tu HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
