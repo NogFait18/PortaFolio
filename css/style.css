@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Variables */
 /*  Variables de colores */
 /*  Variables de fuentes */
@@ -12,18 +13,23 @@
 
 body {
   background-color: #061111;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
   font-family: "Rubik", sans-serif;
-  min-height: 100vh;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas: "sobreMi cv contacto" "proyectos tecnologias contacto";
-  gap: 10px;
-  padding: 20px;
+  gap: 1rem;
+  padding: 1.5rem 3rem;
   align-items: stretch;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 main .bloque {
   border: 1px solid #b0c4c4;
@@ -39,6 +45,7 @@ main h1, main h2, main h3 {
 }
 main p {
   color: #ffffff;
+  letter-spacing: 5px;
 }
 
 /*  Estilos de la seccion SobreMi */
@@ -47,19 +54,27 @@ main p {
   background-color: #26827e;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
+  gap: 2rem;
 }
-.sobreMi .perfil {
-  margin-right: 20px;
+.sobreMi .perfil h2 {
+  font-size: 2.2rem;
+}
+.sobreMi .perfil h3 {
+  font-size: 1.5rem;
 }
 .sobreMi .perfil img {
-  width: 15rem;
-  height: 15rem;
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
 }
-.sobreMi .perfil .linkImg {
-  margin-top: 10px;
-  width: 35px;
-  height: auto;
+.sobreMi .presentacion {
+  max-width: 450px; /* evita que el texto sea muy ancho */
+  line-height: 1.6rem; /* espacio entre líneas más cómodo */
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 10px 20px;
 }
 
 /*  Estilos de la seccion cv */
@@ -76,8 +91,8 @@ main p {
 .cv::before {
   content: "";
   position: absolute;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   background-image: url(../images/documento.png);
   background-position: center;
   background-size: contain;
@@ -87,7 +102,7 @@ main p {
   pointer-events: none;
 }
 .cv h2 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 .cv a {
   display: flex;
@@ -96,8 +111,8 @@ main p {
   align-items: center;
   margin: 2rem;
   border: none;
-  height: 2rem;
-  width: 8rem;
+  height: 3rem;
+  width: 10rem;
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
@@ -117,46 +132,127 @@ main p {
   text-align: center;
 }
 .contacto .arroba {
-  font-size: 16rem;
+  font-size: 15rem;
   opacity: 0.2;
 }
 .contacto h3 {
-  font-size: 45px;
+  font-size: 3.5rem;
   color: #ffffff;
 }
 .contacto a img {
-  margin-top: 20px;
-  width: 45px;
+  margin-top: 3rem;
+  width: 4rem;
   height: auto;
 }
 
-/*  Estilos de la seccion proyectos */
 .proyectos {
   grid-area: proyectos;
   background-color: #9fdfdc;
   text-align: center;
+  padding: 3rem 0;
 }
 .proyectos h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-}
-.proyectos div {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #061111;
 }
 .proyectos img {
-  width: 50px;
+  width: 45px;
   height: auto;
 }
-.proyectos .proyecto {
+
+/* Carrusel */
+.carrusel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* Botones */
+.btn-carrusel {
+  background: none;
+  border: none;
+  color: #061111;
+  font-size: 2.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 0 1rem;
+}
+.btn-carrusel:hover {
+  color: rgb(128.5571428571, 222.4428571429, 217.9);
+  transform: translateY(-50%) scale(1.1);
+}
+.btn-carrusel.prev {
+  left: 0.5rem;
+}
+.btn-carrusel.next {
+  right: 0.5rem;
+}
+
+/* Contenedor interno */
+.carrusel-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Tarjetas */
+.proyecto {
+  flex: 0 0 12rem;
+  height: 8rem;
   display: flex;
   flex-direction: column;
-  width: 7rem;
-  height: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #26827e;
+  border-radius: 1rem;
+  text-align: center;
+  color: #061111;
+  transition: transform 0.4s ease, background-color 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
-  padding: 1rem;
-  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transform-origin: center;
+}
+.proyecto img {
+  width: 90px;
+  height: auto;
+  border-radius: 0.6rem;
+  transition: transform 0.4s ease;
+}
+.proyecto h3 {
+  font-size: 1.5rem;
+}
+.proyecto:hover {
+  transform: scale(1.05);
+  background-color: rgb(44.9214285714, 153.6785714286, 148.95);
+}
+.proyecto.activo {
+  transform: scale(1.15);
+  background-color: rgb(49.5357142857, 169.4642857143, 164.25);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3) inset, 0 0 15px rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  border-radius: 1rem;
+  /* ✅ mantiene bordes redondeados */
+}
+.proyecto.atenuado {
+  transform: scale(0.8);
+  opacity: 0.6;
 }
 
 /*  Estilos de la seccion tecnologias */
@@ -178,7 +274,8 @@ main p {
   gap: 40px;
 }
 .tecnologias .carrusel-track img {
-  width: 60px;
+  margin-top: 2rem;
+  width: 5rem;
   height: auto;
   object-fit: contain;
 }
@@ -192,25 +289,34 @@ main p {
 }
 
 /* Seccion Responsive */
-@media (max-width: 1100px) {
+@media (max-width: 1530px) {
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto; /* 4 filas */
     grid-template-areas: "sobreMi sobreMi" "cv proyectos" "tecnologias tecnologias" "contacto contacto";
   }
-  .proyectos {
-    margin-bottom: 0px;
+  .sobreMi {
+    flex-direction: column;
+    text-align: center;
   }
-  .proyectos div {
-    gap: 30px;
+  .sobreMi .presentacion {
+    max-width: 90%;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .carrusel-items {
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 1.5rem;
+  }
+  .proyecto {
+    flex: 0 0 11rem;
+    height: 7.5rem;
   }
   .proyectos img {
-    width: 60px;
+    width: 55px;
   }
 }
-@media (max-width: 590px) {
+@media (max-width: 900px) {
   main {
     display: grid;
     grid-template-columns: 1fr;
@@ -221,19 +327,48 @@ main p {
     flex-direction: column;
     gap: 30px;
   }
+  .sobreMi .perfil img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+  }
+  .sobreMi .presentacion {
+    line-height: 1.6rem; /* espacio entre líneas más cómodo */
+  }
   .proyectos {
     padding: 1.5rem;
   }
   .proyectos h2 {
-    font-size: 36px;
+    font-size: 1.8rem;
   }
-  .proyectos div {
-    gap: 20px;
+  .carrusel-items {
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 1.2rem;
   }
-  .proyectos img {
+  .proyecto {
+    flex: 0 0 10rem;
+    height: 7rem;
+  }
+  .proyecto img {
     width: 50px;
+  }
+  .proyecto h3 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .carrusel-items {
+    gap: 1rem;
+  }
+  .proyecto {
+    flex: 0 0 9rem;
+    height: 6.5rem;
+  }
+  .proyecto img {
+    width: 45px;
+  }
+  .btn-carrusel {
+    font-size: 2rem;
   }
 }
 @media (max-width: 375px) {
@@ -251,9 +386,25 @@ main p {
     max-width: 160px;
     height: 2.5rem;
   }
-  .proyectos div {
-    gap: 16px;
+  .proyectos {
+    padding: 1rem;
+  }
+  .proyectos h2 {
+    font-size: 1.5rem;
+  }
+  .carrusel-items {
     flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .proyecto {
+    flex: 0 0 8rem;
+    height: 6rem;
+  }
+  .proyecto img {
+    width: 40px;
+  }
+  .proyecto h3 {
+    font-size: 0.9rem;
   }
   .proyectos img,
   .tecnologias .carrusel-track img,

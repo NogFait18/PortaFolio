@@ -1,31 +1,120 @@
-/*  Estilos de la seccion proyectos */
-
 @use "../base/variables" as *;
 
-.proyectos{
+.proyectos {
     grid-area: proyectos;
     background-color: $color-primario;
     text-align: center;
-    h2{
-        font-size: 32px;
-        margin-bottom: 40px;
+    padding: 3rem 0;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: $color-fondo;
     }
-    div{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-    img{
-        width: 50px;
+
+    img {
+        width: 45px;
         height: auto;
     }
-    .proyecto{
-        display: flex;
-        flex-direction: column;
-        width: 7rem;
+}
+
+/* Carrusel */
+.carrusel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+/* Botones */
+.btn-carrusel {
+    background: none;
+    border: none;
+    color: $color-fondo;
+    font-size: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 0 1rem;
+
+    &:hover {
+        color: lighten($color-acento, 10%);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    &.prev {
+        left: 0.5rem;
+    }
+
+    &.next {
+        right: 0.5rem;
+    }
+}
+
+/* Contenedor interno */
+.carrusel-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+/* Tarjetas */
+.proyecto {
+    flex: 0 0 12rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-secundario;
+    border-radius: 1rem;
+    text-align: center;
+    color: $color-fondo;
+    transition: transform 0.4s ease, background-color 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(black, 0.25);
+    overflow: hidden;
+    transform-origin: center;
+    img {
+        width: 90px;
         height: auto;
-        cursor: pointer;
-        padding: 1rem;
-        border-radius: 5px;
+        border-radius: 0.6rem;
+        transition: transform 0.4s ease;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: lighten($color-secundario, 6%);
+    }
+
+    &.activo {
+        transform: scale(1.15);
+        background-color: lighten($color-secundario, 10%);
+        box-shadow: 0 0 20px rgba(white, 0.3) inset, 0 0 15px rgba(white, 0.4);
+        opacity: 1;
+        border-radius: 1rem;
+        /* ✅ mantiene bordes redondeados */
+    }
+
+    &.atenuado {
+        transform: scale(0.8);
+        opacity: 0.6;
     }
 }

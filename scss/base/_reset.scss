@@ -9,19 +9,25 @@
 }
 body{
     background-color: $color-fondo;
+    min-height: 100vh;          // 🔥 ocupa toda la pantalla
+    display: flex;              // 🔥 permite centrar verticalmente
+    justify-content: center;    // 🔥 centra horizontalmente
+    align-items: center;        // 🔥 centra verticalmente
 }
 main{
     font-family: $font-texto;
-    min-height: 100vh;
     display: grid;
     grid-template-columns:  2fr 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
     "sobreMi cv contacto"
     "proyectos tecnologias contacto";
-    gap: 10px;
-    padding: 20px;
+    gap: 1rem;
+    padding: 1.5rem 3rem;
     align-items: stretch;
+    max-width: 1800px;
+    margin: 0 auto; 
+
     .bloque{
         border: 1px solid $color-gris;
         padding: 2rem;
@@ -36,5 +42,6 @@ main{
     }
     p{
         color: $color-blanco;
+        letter-spacing: 5px;
     }
 }

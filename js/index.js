@@ -1,3 +1,52 @@
+const carruselItems = document.querySelector('.carrusel-items');
+const proyectosC = document.querySelectorAll('.proyecto');
+const btnNext = document.querySelector('.btn-carrusel.next');
+const btnPrev = document.querySelector('.btn-carrusel.prev');
+
+let index = 1; // Comenzamos con el segundo proyecto centrado
+
+function centrarProyecto() {
+  const itemWidth = proyectosC[0].offsetWidth + 32; // ancho + gap
+  const scrollX = (itemWidth * index) - (carruselItems.offsetWidth / 2) + (itemWidth / 2);
+
+  carruselItems.scrollTo({
+    left: scrollX,
+    behavior: 'smooth'
+  });
+
+  proyectosC.forEach((el, i) => {
+    el.classList.remove('activo', 'atenuado');
+    if (i === index) {
+      el.classList.add('activo');
+    } else {
+      el.classList.add('atenuado');
+    }
+  });
+}
+
+btnNext.addEventListener('click', () => {
+  index = (index + 1) % proyectosC.length; // 🔁 vuelve a 0 al llegar al final
+  centrarProyecto();
+});
+
+btnPrev.addEventListener('click', () => {
+  index = (index - 1 + proyectosC.length) % proyectosC.length; // 🔁 vuelve al último al ir atrás
+  centrarProyecto();
+});
+
+proyectosC.forEach((el, i) => {
+  el.addEventListener('click', () => {
+    index = i;
+    centrarProyecto();
+    mostrarProyecto?.(i); // ✅ solo si existe la función
+  });
+});
+
+// Inicializar
+centrarProyecto();
+
+
+
 const proyectos = [
     {
         nombre: "Gestor de Empleados",
@@ -45,7 +94,7 @@ function mostrarProyecto(indice){
         `,
         confirmButtonText: "Cerrar",
         confirmButtonColor: "#26827e",
-        width: 500,
+        width: 600,
         padding: '2em',
         background: '#ffff',
         backdrop: `
@@ -56,3 +105,5 @@ function mostrarProyecto(indice){
     `
     });
 }
+
+

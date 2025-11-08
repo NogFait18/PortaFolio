@@ -7,17 +7,27 @@
     background-color: $color-secundario;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    gap: 2rem;
     .perfil{
-        margin-right: 20px;
+        h2{
+            font-size: 2.2rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
         img{
-            width: 15rem;
-            height: 15rem;
+            width: 18rem;
+            height: 18rem;
+            object-fit: cover;
         }
-        .linkImg{
-            margin-top: 10px;
-            width: 35px;
-            height: auto;
-        }
+    }
+    .presentacion{
+        max-width: 450px; /* evita que el texto sea muy ancho */
+        line-height: 1.6rem; /* espacio entre líneas más cómodo */
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 10px 20px;
     }
 }

@@ -21,13 +21,10 @@
             <img src="./images/perfil.png" alt="">
             <h2>Fausto Chirino</h2>
             <h3>Desarrollador Frontend</h3>
-            <a href="https://github.com/NogFait18" target="_blank" title="github"><img src="./images/github.png" alt="github" class="linkImg"></a>
-            <a href="https://www.instagram.com/faustochirino" target="_blank" title="instagram"><img src="./images/instagram.png" alt="instagram" class="linkImg"></a>
-            <a href="https://www.linkedin.com/in/fausto-chirino-76b7572b6" target="_blank" title="linkedin"><img src="./images/linkedin.png" alt="linkedin" class="linkImg"></a>
         </section>
         <section class="presentacion">
             <p>
-            Soy Fausto Chirino 👋, desarrollador junior en formación 🚀 con una fuerte motivación por crecer en el mundo de la tecnología 💻. Actualmente me capacito en desarrollo Frontend con React ⚛️ y cuento con conocimientos en HTML 📝, CSS 🎨, JavaScript 📜 y Git ✨. Busco mi primera experiencia laboral 💼 donde pueda aportar, aprender en equipo 🤝 y asumir nuevos desafíos 🎯. 
+            Soy Fausto Chirino, desarrollador junior en formación, motivado por crecer en el mundo de la tecnología. Busco mi primera experiencia laboral donde pueda aportar, aprender en equipo y asumir nuevos desafíos.
             </p>  
         </section>
     </div>
@@ -46,27 +43,33 @@
         <a href=""><img src="./images/instagram.png" alt="instagram"></a>
         <a href=""><img src="./images/linkedin.png" alt="linkedin"></a>
     </div>
-    <div id="proyectosContenedor" class="proyectos bloque animate__animated animate__bounceInUp">
+    <div class="proyectos bloque animate__animated animate__bounceInUp">
         <h2>Proyectos</h2>
-        <div class="contenedor" >
-        <div class="proyecto" data-id="CRUD" onclick="mostrarProyecto(0)">
-            <img src="./images/CRUD.ico" alt="">
-            <h3>CRUD</h3>
-        </div>
-        <div class="proyecto"  onclick="mostrarProyecto(1)">
-            <img src="./images/CRUD.ico" alt="">
-            <h3>Ejemplo</h3>
-        </div>
-        <div class="proyecto" onclick="mostrarProyecto(2)">
-            <img src="./images/CRUD.ico" alt="">
-            <h3>Ejemplo</h3>
-        </div>
-        <div class="proyecto" data-id="4">
-            <img src="./images/CRUD.ico" alt="">
-            <h3>Ejemplo</h3>
-        </div>
+    
+        <div class="carrusel">
+            <button class="btn-carrusel prev">&#10094;</button>
+    
+            <div class="carrusel-items">
+                <div class="proyecto" onclick="mostrarProyecto(0)">
+                    <img src="./images/emp.ico" alt="">
+                    <h3>CRUD</h3>
+                </div>
+                <div class="proyecto" onclick="mostrarProyecto(1)">
+                    <img src="./images/calculadora.png" alt="">
+                    <h3>Ecommerce</h3>
+                </div>
+                <div class="proyecto" onclick="mostrarProyecto(2)">
+                    <img src="./images/blog.png" alt="">
+                    <h3>API con Typescript</h3>
+                </div>
+            </div>
+    
+            <button class="btn-carrusel next">&#10095;</button>
         </div>
     </div>
+
+
+
     <div class="tecnologias bloque animate__animated animate__rubberBand">
         <h2>Tecnologias</h2>
     <div class="carrusel-track">
