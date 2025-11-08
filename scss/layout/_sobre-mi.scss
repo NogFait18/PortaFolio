@@ -11,22 +11,22 @@
     text-align: center;
     gap: 2rem;
     .perfil{
+        padding: 1rem;
         h2{
-            font-size: 2.2rem;
-        }
-        h3{
             font-size: 1.5rem;
         }
+        h3{
+            font-size: 1rem;
+        }
         img{
-            width: 18rem;
-            height: 18rem;
+            width: 13rem;
+            height: 13rem;
             object-fit: cover;
         }
     }
     .presentacion{
-        max-width: 450px; /* evita que el texto sea muy ancho */
-        line-height: 1.6rem; /* espacio entre líneas más cómodo */
-        font-size: 1.2rem;
+        line-height: 1.5rem; /* espacio entre líneas más cómodo */
+        font-size: 1rem;
         margin: 0;
         padding: 10px 20px;
     }

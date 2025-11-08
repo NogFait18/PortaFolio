@@ -10,7 +10,7 @@
     position: relative;
     h2{
         font-size: 32px;
-        margin-bottom: 50px;
+        padding: .4rem;
     }
 
     .carrusel-track {
@@ -18,11 +18,12 @@
     width: max-content;
     animation: scroll 20s linear infinite;
     gap: 40px;
+    
     }
 
     .carrusel-track img {
     margin-top: 2rem;
-    width: 5rem;
+    width: 6rem;
     height: auto;
     object-fit: contain;
     }

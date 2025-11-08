@@ -1,5 +1,5 @@
 /* Seccion Responsive */
-@media (max-width: 1530px) {
+@media (max-width: 1300px) {
     main {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto auto; /* 4 filas */
@@ -9,31 +9,24 @@
         "tecnologias tecnologias"
         "contacto contacto";
     }
-    .sobreMi {
-        flex-direction: column;
-        text-align: center;
-
-        .presentacion {
-            max-width: 90%;
-            text-align: center;
-            font-size: 1.3rem;
+    .proyectos{
+        margin-bottom: 0px;
+        div{
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        img{
+            width: 60px;
         }
     }
-    .carrusel-items {
-        flex-wrap: wrap;
-        gap: 1.5rem;
-    }
-
-    .proyecto {
-        flex: 0 0 11rem;
-        height: 7.5rem;
-    }
-
-    .proyectos img {
-        width: 55px;
+    .tecnologias{
+        .carrusel-track{
+            padding: 2rem;
+        }
     }
 }
-@media(max-width:900px){
+@media(max-width:590px){
     main {
         display: grid;
         grid-template-columns: 1fr ;
@@ -48,65 +41,24 @@
     .sobreMi{
         flex-direction: column;
         gap: 30px;
-        .perfil{
-            img{
-                width: 20rem;
-                height: 20rem;
-                object-fit: cover;
-            }
-        }
-        .presentacion{
-            line-height: 1.6rem; /* espacio entre líneas más cómodo */
     }
-    }
-        .proyectos {
-            padding: 1.5rem;
-    
-            h2 {
-                font-size: 1.8rem;
-            }
+    .proyectos {
+        padding: 1.5rem; // 🔧 menos padding
+        h2 {
+            font-size: 36px; // 🔧 más pequeño aún
         }
-    
-        .carrusel-items {
+
+        div {
+            gap: 20px; // 🔧 menos espacio entre íconos
             flex-wrap: wrap;
-            gap: 1.2rem;
+            justify-content: center;
         }
-    
-        .proyecto {
-            flex: 0 0 10rem;
-            height: 7rem;
-    
-            img {
-                width: 50px;
-            }
-    
-            h3 {
-                font-size: 1rem;
-            }
+
+        img {
+            width: 50px;
         }
+    }
 }
-
-
-@media (max-width: 768px) {
-    .carrusel-items {
-            gap: 1rem;
-        }
-    
-        .proyecto {
-            flex: 0 0 9rem;
-            height: 6.5rem;
-    
-            img {
-                width: 45px;
-            }
-        }
-    
-        .btn-carrusel {
-            font-size: 2rem;
-        }
-}
-
-
 @media(max-width:375px){
     main{
         padding: 0px;
@@ -127,28 +79,9 @@
     }
 
     .proyectos {
-        padding: 1rem;
-
-        h2 {
-            font-size: 1.5rem;
-        }
-    }
-
-    .carrusel-items {
-        flex-wrap: wrap;
-        gap: 0.8rem;
-    }
-
-    .proyecto {
-        flex: 0 0 8rem;
-        height: 6rem;
-
-        img {
-            width: 40px;
-        }
-
-        h3 {
-            font-size: 0.9rem;
+        div{
+            gap: 16px;
+            flex-wrap: wrap;
         }
     }
 
