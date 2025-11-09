@@ -9,6 +9,11 @@
         "tecnologias tecnologias"
         "contacto contacto";
     }
+    .sobreMi{
+        .presentacion{
+            width: 50%;
+        }
+    }
     .proyectos{
         margin-bottom: 0px;
         div{
@@ -24,6 +29,14 @@
         .carrusel-track{
             padding: 2rem;
         }
+    }
+}
+
+@media(max-width:800px){
+    .sobreMi{
+        .presentacion{
+                width: 100%;
+            }
     }
 }
 @media(max-width:590px){
