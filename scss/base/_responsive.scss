@@ -1,5 +1,12 @@
 /* Seccion Responsive */
-@media (max-width: 1300px) {
+@media (max-width: 1600px){
+    .sobreMi{
+        .presentacion{
+            width: 50%;
+        }
+    }
+}
+@media (max-width: 1200px) {
     main {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto auto auto; /* 4 filas */
@@ -8,6 +15,7 @@
         "cv proyectos"
         "tecnologias tecnologias"
         "contacto contacto";
+        width: 800px;
     }
     .sobreMi{
         .presentacion{

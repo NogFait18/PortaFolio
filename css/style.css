@@ -26,7 +26,7 @@ main {
   width: 1200px;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
@@ -74,7 +74,7 @@ main p {
 }
 .sobreMi .presentacion {
   line-height: 1.5rem; /* espacio entre líneas más cómodo */
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
   padding: 10px 20px;
 }
@@ -138,8 +138,10 @@ main p {
   opacity: 0.2;
 }
 .contacto h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ffffff;
+  letter-spacing: 2px;
+  line-height: 3rem;
 }
 .contacto a img {
   margin-top: 3rem;
@@ -275,7 +277,7 @@ main p {
 }
 .tecnologias .carrusel-track img {
   margin-top: 2rem;
-  width: 6rem;
+  width: 4.5rem;
   height: auto;
   object-fit: contain;
 }
@@ -289,11 +291,17 @@ main p {
 }
 
 /* Seccion Responsive */
-@media (max-width: 1300px) {
+@media (max-width: 1600px) {
+  .sobreMi .presentacion {
+    width: 50%;
+  }
+}
+@media (max-width: 1200px) {
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto; /* 4 filas */
     grid-template-areas: "sobreMi sobreMi" "cv proyectos" "tecnologias tecnologias" "contacto contacto";
+    width: 800px;
   }
   .sobreMi .presentacion {
     width: 50%;
